@@ -373,8 +373,11 @@ img {
   text-shadow: #000 0 0 5px;
 }
 
-#que-es ul li {
+#que-es ul li:not(:last-child) {
   margin-bottom: 15px;
+}
+#que-es article a {
+  color: var(--section-dark-color);
 }
 #que-es .row {
   flex-direction: row-reverse;
@@ -385,11 +388,17 @@ img {
   }
 }
 
+#por-que ul li:not(:last-child) {
+  margin-bottom: 15px;
+}
 #por-que .card p {
   margin-bottom: 0;
 }
+#por-que .card:first-child p {
+  margin: 0;
+}
 
-#especial ul li {
+#especial ul li:not(:last-child) {
   margin-bottom: 15px;
 }
 #especial .row {
@@ -417,10 +426,11 @@ img {
   flex-direction: column;
 }
 #como-funciona article .button {
-  font-size: 1em;
   margin-top: 20px;
-  width: -moz-fit-content;
-  width: fit-content;
+}
+#como-funciona .col > article {
+  font-size: 1.3em;
+  text-align: center;
 }
 
 #para-ti {
@@ -443,6 +453,20 @@ img {
   flex: 1;
 }
 #para-ti article i {
+  font-size: 2.3em;
+  flex: 0;
+  color: var(--section-dark-color);
+}
+
+#apuntarte article {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#apuntarte article p {
+  flex: 1;
+}
+#apuntarte article i {
   font-size: 2.3em;
   flex: 0;
   color: var(--section-dark-color);

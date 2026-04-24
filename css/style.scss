@@ -444,8 +444,12 @@ img {
 
 // "¿QUÉ ES?"
 #que-es {
-    ul li {
-        margin-bottom: 15px;
+    ul li:not(:last-child) { margin-bottom: 15px; }
+
+    article {
+        a {
+            color: var(--section-dark-color);
+        }
     }
 
     .row {
@@ -459,18 +463,16 @@ img {
 
 // "¿POR QUÉ HEMOS CREADO LA SUMMER EDITION?"
 #por-que {
-    .card {
-        p {
-            margin-bottom: 0;
-        }
-    }
+    ul li:not(:last-child) { margin-bottom: 15px; }
+
+    .card { p { margin-bottom: 0; } }
+
+    .card:first-child { p { margin: 0; } }
 }
 
 // "¿QUÉ LA HACE TAN ESPECIAL?"
 #especial {
-    ul li {
-        margin-bottom: 15px;
-    }
+    ul li:not(:last-child) { margin-bottom: 15px; }
 
     .row {
         flex-direction: row-reverse;
@@ -497,11 +499,12 @@ img {
         display: flex;
         flex-direction: column;
 
-        .button {
-            font-size: 1em;
-            margin-top: 20px;
-            width: fit-content;
-        }
+        .button { margin-top: 20px; }
+    }
+
+    .col > article {
+        font-size: 1.3em;
+        text-align: center;
     }
 }
 
@@ -521,6 +524,25 @@ img {
         display: flex;
         align-items: center;
         gap: 20px;
+
+        p {
+            flex: 1;
+        }
+
+        i {
+            font-size: 2.3em;
+            flex: 0;
+            color: var(--section-dark-color);
+        }
+    }
+}
+
+// "¿POR QUÉ DEBERÍAS APUNTARTE?"
+#apuntarte {
+    article {
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
         p {
             flex: 1;
