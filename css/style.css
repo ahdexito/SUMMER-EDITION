@@ -74,7 +74,13 @@ section .col {
   }
 }
 section .col.image-container {
+  width: 80%;
   min-height: 200px;
+}
+@media (max-width: 900px) {
+  section .col.image-container {
+    width: 100%;
+  }
 }
 @media (max-width: 1200px) {
   section .col.image-container {
@@ -373,8 +379,20 @@ img {
   text-shadow: #000 0 0 5px;
 }
 
-#que-es ul li:not(:last-child) {
+#que-es .card hr {
+  margin-bottom: 20px;
+}
+#que-es .card ul {
+  list-style-type: none;
+}
+#que-es .card ul li {
   margin-bottom: 15px;
+}
+#que-es .card ul li i {
+  color: #ffffff;
+}
+#que-es .card ul li:last-child {
+  margin-bottom: 30px;
 }
 #que-es article a {
   color: var(--section-dark-color);
@@ -388,14 +406,29 @@ img {
   }
 }
 
-#por-que ul li:not(:last-child) {
+#por-que article h4 {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: var(--section-dark-color);
+  color: #ffffff;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+#por-que article ul li:not(:last-child) {
   margin-bottom: 15px;
+}
+#por-que article p {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--section-dark-color);
+  text-align: center;
+}
+#por-que a {
+  margin-top: 30px;
 }
 #por-que .card p {
   margin-bottom: 0;
-}
-#por-que .card:first-child p {
-  margin: 0;
 }
 
 #especial ul li:not(:last-child) {
@@ -421,16 +454,34 @@ img {
     flex-direction: column;
   }
 }
-#como-funciona article {
-  display: flex;
-  flex-direction: column;
+#como-funciona article > ul li {
+  margin-bottom: 20px;
 }
-#como-funciona article .button {
+#como-funciona article > ul li::marker {
+  color: var(--section-dark-color);
+  font-size: 1.2em;
+}
+#como-funciona article > ul li ul {
+  list-style-type: circle;
+  margin-left: 25px;
+  margin-top: 5px;
+}
+#como-funciona article > ul li:last-child {
+  margin: 0;
+}
+#como-funciona article b {
+  color: var(--section-dark-color);
+  font-size: 1.1em;
+}
+#como-funciona article p {
   margin-top: 20px;
 }
 #como-funciona .col > article {
   font-size: 1.3em;
   text-align: center;
+}
+#como-funciona .col > article h4 {
+  color: var(--section-dark-color);
 }
 
 #para-ti {
@@ -451,6 +502,8 @@ img {
 }
 #para-ti article p {
   flex: 1;
+  font-weight: bold;
+  color: var(--section-dark-color);
 }
 #para-ti article i {
   font-size: 2.3em;
@@ -465,6 +518,8 @@ img {
 }
 #apuntarte article p {
   flex: 1;
+  font-weight: bold;
+  color: var(--section-dark-color);
 }
 #apuntarte article i {
   font-size: 2.3em;
@@ -728,4 +783,7 @@ body::after {
     content: "BREAKPOINT SM";
     background-color: cyan;
   }
+}
+body::after {
+  content: none;
 }/*# sourceMappingURL=style.css.map */

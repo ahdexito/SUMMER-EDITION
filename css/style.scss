@@ -126,7 +126,12 @@ section {
         }
 
         &.image-container {
+            width: 80%;
             min-height: 200px;
+
+            @include respond-to(md) {
+                width: 100%;
+            }
 
             @include respond-to(lg) {
                 height: auto;
@@ -444,7 +449,21 @@ img {
 
 // "¿QUÉ ES?"
 #que-es {
-    ul li:not(:last-child) { margin-bottom: 15px; }
+    .card {
+        hr { margin-bottom: 20px; }
+        
+        ul {
+            list-style-type: none;
+
+            li { 
+                margin-bottom: 15px; 
+                
+                i { color: $color-light; }
+
+                &:last-child { margin-bottom: 30px; }
+            }
+        } 
+    }   
 
     article {
         a {
@@ -463,11 +482,30 @@ img {
 
 // "¿POR QUÉ HEMOS CREADO LA SUMMER EDITION?"
 #por-que {
-    ul li:not(:last-child) { margin-bottom: 15px; }
+    article {
+        h4 {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: var(--section-dark-color);
+            color: $color-light;
+            font-size: 1.3em;
+            text-transform: uppercase;
+            border-radius: 10px;
+        }
+
+        ul li:not(:last-child) { margin-bottom: 15px; }
+
+        p { 
+            font-weight: bold; 
+            font-size: 1.1em;
+            color: var(--section-dark-color);
+            text-align: center;
+        }
+    }
+
+    a { margin-top: 30px; }
 
     .card { p { margin-bottom: 0; } }
-
-    .card:first-child { p { margin: 0; } }
 }
 
 // "¿QUÉ LA HACE TAN ESPECIAL?"
@@ -496,15 +534,36 @@ img {
     }
 
     article {
-        display: flex;
-        flex-direction: column;
+        & > ul li {
+            margin-bottom: 20px;
 
-        .button { margin-top: 20px; }
+            &::marker {
+                color: var(--section-dark-color);
+                font-size: 1.2em;
+            }
+
+            ul {
+                list-style-type: circle;
+                margin-left: 25px;
+                margin-top: 5px;
+            }
+        }
+
+        & > ul li:last-child { margin: 0; }
+
+        b { 
+            color: var(--section-dark-color); 
+            font-size: 1.1em;
+        }
+
+        p { margin-top: 20px; }
     }
 
     .col > article {
         font-size: 1.3em;
         text-align: center;
+
+        h4 { color: var(--section-dark-color); }
     }
 }
 
@@ -527,6 +586,8 @@ img {
 
         p {
             flex: 1;
+            font-weight: bold;
+            color: var(--section-dark-color);
         }
 
         i {
@@ -546,6 +607,8 @@ img {
 
         p {
             flex: 1;
+            font-weight: bold;
+            color: var(--section-dark-color);
         }
 
         i {
@@ -859,4 +922,4 @@ body::after {
         background-color: cyan;
     }
 }
-//body::after { content: none; }
+body::after { content: none; }
