@@ -16,7 +16,7 @@ $color-shade: #2a2a2a7d;
 $color-global-button: #e3ff38;
 $color-button-whatsapp: #40cf4b;
 
-$color-global-1: #57bf8c;
+$color-global-1: #c7ead9;
 $color-global-1-dark: #007a44;
 $color-global-2: #3ec1d3;
 $color-global-2-dark: #00446d;
@@ -447,6 +447,7 @@ img {
     }
 }
 
+/*
 // "¿QUÉ ES?"
 #que-es {
     .card {
@@ -476,6 +477,76 @@ img {
 
         @include respond-to(md) {
             flex-direction: column;
+        }
+    }
+}
+    */
+
+#que-es {
+    background-color: #f0f0f0;
+    box-shadow: none;
+
+    .row {
+        max-width: $breakpoint-lg;
+    }
+
+    h2 {
+        border: none;
+        max-width: $breakpoint-lg;
+        background: none;
+        box-shadow: none;
+        color: var(--section-dark-color);
+        text-shadow: none;
+        font-size: 3em;
+    }
+
+    h3 {
+        background: none;
+        color: var(--section-dark-color);
+    }
+
+    .image-container {
+        display: none;
+    }
+
+    article {
+        box-shadow: none;
+        background: none;
+        text-align: center;
+    }
+
+    article:nth-of-type(2) {
+        margin-top: 30px;
+        background-color: #dddddd;
+
+        p:nth-of-type(2) {
+            margin-top: 20px;
+            font-weight: bold;
+            color: var(--section-dark-color);
+        }
+
+        a {
+            color: #000;
+        }
+    }
+
+    a {
+        border: none;
+    }
+
+    .card {
+        width: 100%;
+        border: none;
+        background-color: var(--section-dark-color);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 10px 20px;
+
+        i {
+            font-size: 3em;
+            margin-right: 30px;
+            color: $color-light;
         }
     }
 }
