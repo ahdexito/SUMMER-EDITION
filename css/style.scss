@@ -19,7 +19,7 @@ $color-button-whatsapp: #40cf4b;
 
 $color-global-1: #0c5635;
 $color-global-2: #02c268;
-$color-global-3: #30be83;
+$color-global-3: #d2ecd8;
 $color-global-4: #00446d;
 $color-global-5: #3ec1d3;
 $color-global-6: #30adbe;
@@ -285,7 +285,7 @@ article {
         width: 100%;
         padding: 20px;
         border-radius: 10px;
-        background-color: var(--section-color-3);
+        background-color: $color-light;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -299,8 +299,7 @@ article {
             text-align: center;
 
             b {
-                color: $color-light;
-                text-shadow: $color-shade 1px 2px;
+                color: var(--section-color-2);
                 font-weight: 700;
             }
         }
@@ -325,17 +324,15 @@ article {
         color: var(--section-color-1);
 
         b {
-            color: $color-light;
-            text-shadow: $color-shade 1px 2px;
-            font-weight: 700;
+            color: var(--section-color-1);
+            font-weight: 900;
         }
     }
 
     i {
         font-size: 3em;
         margin-right: 30px;
-        color: $color-light;
-        text-shadow: var(--section-color-1) 2px 3px;
+        color: var(--section-color-1);
     }
 }
 
