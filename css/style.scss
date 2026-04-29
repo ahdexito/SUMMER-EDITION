@@ -179,7 +179,7 @@ section {
 }
 
 .side-image {
-    border: 5px solid var(--section-color-2);
+    border: 5px solid var(--section-color-1);
     box-shadow: $color-shade 5px 5px 10px;
 
     @include respond-to(lg) {

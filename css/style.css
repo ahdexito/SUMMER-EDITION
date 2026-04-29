@@ -123,7 +123,7 @@ section#dudas {
 }
 
 .side-image {
-  border: 5px solid var(--section-color-2);
+  border: 5px solid var(--section-color-1);
   box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 10px;
 }
 @media (max-width: 1200px) {
