@@ -103,10 +103,11 @@ section {
 
     .row {
         @include flex-center;
-        max-width: $breakpoint-md;
+        max-width: $breakpoint-lg;
         flex-direction: row;
         gap: 20px;
         width: 100%;
+        padding: 0 5%;
         align-items: stretch;
 
         @include respond-to(md) {
@@ -265,10 +266,9 @@ article {
 
 .card {
     margin-top: 40px;
-    padding-bottom: 20px;
-    background-color: var(--section-color-3);
+    background-color: var(--section-color-1);
     border: 5px solid var(--section-color-1);
-    border-radius: 10px;
+    border-radius: 13px;
     box-shadow: $color-shade 5px 5px 5px;
 
     @include flex-center;
@@ -278,20 +278,33 @@ article {
         padding: 10px;
         font-size: 1.5em;
         text-align: center;
-        background-color: var(--section-color-1);
         color: $color-light;
     }
 
-    p {
-        font-size: 1.2em;
-        margin: 20px 20px 0;
-        color: $color-light;
-        text-shadow: var(--section-color-1) 1px 2px;
-        text-align: center;
+    .card-content {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: var(--section-color-3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        p {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--section-color-1);
+            text-align: center;
+
+            b {
+                color: $color-light;
+                text-shadow: $color-shade 1px 2px;
+                font-weight: 700;
+            }
+        }
     }
-
-    .button { margin-top: 30px; }
-
 }
 
 .card-small {
@@ -306,8 +319,17 @@ article {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    color: $color-light;
-    text-shadow: var(--section-color-1) 1px 2px;
+
+    p {
+        font-weight: 600;
+        color: var(--section-color-1);
+
+        b {
+            color: $color-light;
+            text-shadow: $color-shade 1px 2px;
+            font-weight: 700;
+        }
+    }
 
     i {
         font-size: 3em;
@@ -488,10 +510,7 @@ img {
 // "¿QUÉ ES?"
 #que-es {
     .card {
-        a { 
-            color: $color-global-1; 
-            text-shadow: none;
-        }
+        a { color: $color-light; }
     }
 }
 
@@ -500,14 +519,16 @@ img {
     .card-small { 
         background-color: #e36b53;
         border-color: #a2412d;
-        font-weight: bold;
         font-size: 1.5em;
-        color: $color-light;
+        text-shadow: $color-shade 1px 2px;
+
+        p { color: $color-light; }
 
         i { 
             font-size: 1.2em; 
             margin-right: 10px;
             color: $color-light;
+            text-shadow: $color-shade 2px 3px;
         }
     }
 }
@@ -637,6 +658,8 @@ img {
     flex-direction: column;
 
     .row {
+        max-width: none;
+        padding: 0 5%;
         flex-direction: row-reverse;
 
         @include respond-to(md) {

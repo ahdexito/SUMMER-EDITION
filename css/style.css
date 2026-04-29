@@ -48,10 +48,11 @@ section .row {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  max-width: 900px;
+  max-width: 1200px;
   flex-direction: row;
   gap: 20px;
   width: 100%;
+  padding: 0 5%;
   align-items: stretch;
 }
 @media (max-width: 900px) {
@@ -212,10 +213,9 @@ article ol li::before {
 
 .card {
   margin-top: 40px;
-  padding-bottom: 20px;
-  background-color: var(--section-color-3);
+  background-color: var(--section-color-1);
   border: 5px solid var(--section-color-1);
-  border-radius: 10px;
+  border-radius: 13px;
   box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 5px;
   display: flex;
   align-items: center;
@@ -227,18 +227,29 @@ article ol li::before {
   padding: 10px;
   font-size: 1.5em;
   text-align: center;
-  background-color: var(--section-color-1);
   color: #ffffff;
 }
-.card p {
+.card .card-content {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--section-color-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.card .card-content p {
   font-size: 1.2em;
-  margin: 20px 20px 0;
-  color: #ffffff;
-  text-shadow: var(--section-color-1) 1px 2px;
+  font-weight: 600;
+  color: var(--section-color-1);
   text-align: center;
 }
-.card .button {
-  margin-top: 30px;
+.card .card-content p b {
+  color: #ffffff;
+  text-shadow: rgba(42, 42, 42, 0.4901960784) 1px 2px;
+  font-weight: 700;
 }
 
 .card-small {
@@ -253,8 +264,15 @@ article ol li::before {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+}
+.card-small p {
+  font-weight: 600;
+  color: var(--section-color-1);
+}
+.card-small p b {
   color: #ffffff;
-  text-shadow: var(--section-color-1) 1px 2px;
+  text-shadow: rgba(42, 42, 42, 0.4901960784) 1px 2px;
+  font-weight: 700;
 }
 .card-small i {
   font-size: 3em;
@@ -426,21 +444,23 @@ img {
 }
 
 #que-es .card a {
-  color: #0c5635;
-  text-shadow: none;
+  color: #ffffff;
 }
 
 #por-que .card-small {
   background-color: #e36b53;
   border-color: #a2412d;
-  font-weight: bold;
   font-size: 1.5em;
+  text-shadow: rgba(42, 42, 42, 0.4901960784) 1px 2px;
+}
+#por-que .card-small p {
   color: #ffffff;
 }
 #por-que .card-small i {
   font-size: 1.2em;
   margin-right: 10px;
   color: #ffffff;
+  text-shadow: rgba(42, 42, 42, 0.4901960784) 2px 3px;
 }
 
 #especial .card-small i {
@@ -546,6 +566,8 @@ img {
   flex-direction: column;
 }
 #dudas .row {
+  max-width: none;
+  padding: 0 5%;
   flex-direction: row-reverse;
 }
 @media (max-width: 900px) {
