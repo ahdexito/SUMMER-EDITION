@@ -50,9 +50,8 @@ section .row {
   flex-direction: column;
   max-width: 1200px;
   flex-direction: row;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
-  padding: 0 5%;
   align-items: stretch;
 }
 @media (max-width: 900px) {
@@ -62,12 +61,13 @@ section .row {
   }
 }
 section .col {
+  padding: 0 10px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  gap: 20px;
+  gap: 10px;
 }
 @media (max-width: 900px) {
   section .col {
@@ -96,7 +96,7 @@ section#que-es {
 section#por-que {
   --section-color-1: #00446d;
   --section-color-2: #3ec1d3;
-  --section-color-3: #30adbe;
+  --section-color-3: #c9e9ed;
 }
 section#especial {
   --section-color-1: #0c5635;
@@ -106,7 +106,7 @@ section#especial {
 section#como-funciona {
   --section-color-1: #00446d;
   --section-color-2: #3ec1d3;
-  --section-color-3: #30adbe;
+  --section-color-3: #c9e9ed;
 }
 section#para-ti {
   --section-color-1: #0c5635;
@@ -116,7 +116,7 @@ section#para-ti {
 section#apuntarte {
   --section-color-1: #00446d;
   --section-color-2: #3ec1d3;
-  --section-color-3: #30adbe;
+  --section-color-3: #c9e9ed;
 }
 section#dudas {
   --section-color-1: #0c5635;
@@ -216,7 +216,6 @@ article ol li::before {
   background-color: var(--section-color-1);
   border: 5px solid var(--section-color-1);
   border-radius: 13px;
-  box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -233,7 +232,7 @@ article ol li::before {
   width: 100%;
   padding: 20px;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: var(--section-color-3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -242,35 +241,30 @@ article ol li::before {
 }
 .card .card-content p {
   font-size: 1.2em;
-  font-weight: 600;
   color: var(--section-color-1);
   text-align: center;
-}
-.card .card-content p b {
-  color: var(--section-color-2);
-  font-weight: 700;
 }
 
 .card-small {
   width: 100%;
+  max-width: 400px;
+}
+@media (max-width: 900px) {
+  .card-small {
+    max-width: 600px;
+  }
+}
+.card-small {
   padding: 20px;
   font-size: 1.2em;
   border: 3px solid var(--section-color-1);
   border-radius: 10px;
-  background-color: var(--section-color-3);
-  box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 5px;
+  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-}
-.card-small p {
-  font-weight: 600;
   color: var(--section-color-1);
-}
-.card-small p b {
-  color: var(--section-color-1);
-  font-weight: 900;
 }
 .card-small i {
   font-size: 3em;
@@ -281,8 +275,8 @@ article ol li::before {
 .article-card {
   width: 100%;
   background-color: var(--section-color-2);
-  border-radius: 10px;
-  box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 5px;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 .article-card h3 {
   border-radius: 10px 10px 0 0;
@@ -298,6 +292,8 @@ article ol li::before {
   box-shadow: none;
   width: calc(100% - 10px);
   margin-left: 10px;
+  border: 5px solid var(--section-color-1);
+  border-radius: 20px;
 }
 .article-card article ul {
   list-style: inside disc;
@@ -313,10 +309,18 @@ h1, h2, h3 {
 
 h2 {
   font-size: 3em;
+}
+@media (max-width: 900px) {
+  h2 {
+    font-size: 2.3em;
+  }
+}
+h2 {
+  padding: 20px;
   background-color: var(--section-color-1);
   color: #ffffff;
-  margin-bottom: 30px;
   border-bottom: 10px solid var(--section-color-2);
+  line-height: 1.1em;
 }
 
 h3 {
@@ -347,7 +351,6 @@ img {
   width: 100%;
   background-color: #e3ff38;
   color: #000000;
-  border: 3px solid #000000;
   border-radius: 10px;
   padding: 15px 50px;
   font-size: 20px;
@@ -355,14 +358,14 @@ img {
   text-align: center;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 5px;
+  box-shadow: rgba(42, 42, 42, 0.4901960784) 0 0 10px;
   margin: auto;
   max-width: 600px;
   transition: all 0.3s ease;
 }
 .button:hover {
   transform: translateY(-5px);
-  box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 10px 15px, inset rgba(42, 42, 42, 0.4901960784) 0 -3px 10px 2px;
+  box-shadow: rgba(42, 42, 42, 0.4901960784) 0 5px 15px;
 }
 .button span:nth-of-type(2) {
   font-size: 0.6em;
@@ -403,13 +406,15 @@ img {
 }
 
 #landing {
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
   background: #000;
   text-align: center;
   flex-direction: column;
-  gap: 40px;
+  padding: 0 10px 50px;
+  gap: 0;
+  justify-content: space-between;
 }
 #landing::after {
   content: "";
@@ -424,16 +429,20 @@ img {
   z-index: 3;
 }
 #landing #logo {
-  width: 200px;
+  width: 150px;
   margin: 0 auto;
 }
 #landing h1 {
-  font-size: 60px;
+  font-size: 3em;
+  padding: 0;
 }
 #landing .text-1 {
-  font-size: 26px;
+  font-size: 1.5em;
 }
 #landing .text-2 {
+  font-size: 1.2em;
+}
+#landing .text-3 {
   margin-top: 20px;
 }
 #landing h1, #landing p {
@@ -441,13 +450,14 @@ img {
 }
 
 #que-es .card a {
-  color: #ffffff;
+  color: var(--section-color-1);
 }
 
 #por-que .card-small {
   background-color: #e36b53;
   border-color: #a2412d;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  font-weight: bold;
   text-shadow: rgba(42, 42, 42, 0.4901960784) 1px 2px;
 }
 #por-que .card-small p {
@@ -543,20 +553,8 @@ img {
   color: var(--section-color-2);
 }
 
-#apuntarte article {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-#apuntarte article p {
-  flex: 1;
-  font-weight: bold;
-  color: var(--section-color-2);
-}
-#apuntarte article i {
-  font-size: 2.3em;
-  flex: 0;
-  color: var(--section-color-2);
+#apuntarte .card-small {
+  max-width: 900px;
 }
 
 #dudas {
@@ -564,7 +562,6 @@ img {
 }
 #dudas .row {
   max-width: none;
-  padding: 0 5%;
   flex-direction: row-reverse;
 }
 @media (max-width: 900px) {
@@ -576,6 +573,7 @@ img {
   background-color: rgb(21.3673469388, 153.1326530612, 94.3724489796);
   border: none;
   padding: 20px;
+  margin: 0;
 }
 #dudas .card h4 {
   background: none;
@@ -584,12 +582,20 @@ img {
   color: #ffffff;
   margin: 0 0 20px;
 }
+#dudas .image-container {
+  margin: 0 10px;
+}
+@media (max-width: 900px) {
+  #dudas .image-container {
+    margin-top: 40px;
+  }
+}
 #dudas article {
   display: flex;
   flex-direction: column;
   height: auto;
   box-shadow: rgba(42, 42, 42, 0.4901960784) 5px 5px 5px;
-  padding: 15px;
+  padding: 0;
   color: #ffffff;
   background: none;
   box-shadow: none;

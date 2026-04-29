@@ -22,7 +22,7 @@ $color-global-2: #02c268;
 $color-global-3: #d2ecd8;
 $color-global-4: #00446d;
 $color-global-5: #3ec1d3;
-$color-global-6: #30adbe;
+$color-global-6: #c9e9ed;
 $color-global-7: #c7fff7;
 
 
@@ -105,9 +105,8 @@ section {
         @include flex-center;
         max-width: $breakpoint-lg;
         flex-direction: row;
-        gap: 20px;
+        gap: 10px;
         width: 100%;
-        padding: 0 5%;
         align-items: stretch;
 
         @include respond-to(md) {
@@ -117,12 +116,13 @@ section {
     }
 
     .col {
+        padding: 0 10px;
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         width: 100%;
-        gap: 20px;
+        gap: 10px;
 
         @include respond-to(md) {
             max-width: $breakpoint-sm;
@@ -269,7 +269,6 @@ article {
     background-color: var(--section-color-1);
     border: 5px solid var(--section-color-1);
     border-radius: 13px;
-    box-shadow: $color-shade 5px 5px 5px;
 
     @include flex-center;
 
@@ -285,7 +284,7 @@ article {
         width: 100%;
         padding: 20px;
         border-radius: 10px;
-        background-color: $color-light;
+        background-color: var(--section-color-3);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -294,40 +293,26 @@ article {
 
         p {
             font-size: 1.2em;
-            font-weight: 600;
             color: var(--section-color-1);
             text-align: center;
-
-            b {
-                color: var(--section-color-2);
-                font-weight: 700;
-            }
         }
     }
 }
 
 .card-small {
     width: 100%;
+    max-width: 400px;
+    @include respond-to(md) { max-width: $breakpoint-sm; }
     padding: 20px;
     font-size: 1.2em;
     border: 3px solid var(--section-color-1);
     border-radius: 10px;
-    background-color: var(--section-color-3);
-    box-shadow: $color-shade 5px 5px 5px;
+    background-color: $color-light;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-
-    p {
-        font-weight: 600;
-        color: var(--section-color-1);
-
-        b {
-            color: var(--section-color-1);
-            font-weight: 900;
-        }
-    }
+    color: var(--section-color-1);
 
     i {
         font-size: 3em;
@@ -339,8 +324,8 @@ article {
 .article-card {
     width: 100%;
     background-color: var(--section-color-2);
-    border-radius: 10px;
-    box-shadow: $color-shade 5px 5px 5px;
+    border-radius: 20px;
+    margin-bottom: 10px;
 
     h3 {
         border-radius: 10px 10px 0 0;
@@ -358,6 +343,8 @@ article {
         box-shadow: none;
         width: calc(100% - 10px);
         margin-left: 10px;
+        border: 5px solid var(--section-color-1);
+        border-radius: 20px;
 
         ul {
             list-style: inside disc;
@@ -375,10 +362,12 @@ h1, h2, h3 {
 
 h2 { 
     font-size: 3em; 
+    @include respond-to(md) { font-size: 2.3em; }
+    padding: 20px;
     background-color: var(--section-color-1);
     color: $color-light;
-    margin-bottom: 30px;
     border-bottom: 10px solid var(--section-color-2);
+    line-height: 1.1em;
 }
 
 h3 { 
@@ -408,7 +397,6 @@ img {
     width: 100%;
     background-color: $color-global-button;
     color: $color-dark;
-    border: 3px solid $color-dark;
     border-radius: 10px;
     padding: 15px 50px;
     font-size: 20px;
@@ -416,16 +404,14 @@ img {
     text-align: center;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: $color-shade 5px 5px 5px;
+    box-shadow: $color-shade 0 0 10px;
     margin: auto;
     max-width: $breakpoint-sm;
     transition: all 0.3s ease;
 
     &:hover {
         transform: translateY(-5px);
-        box-shadow: 
-            $color-shade 5px 10px 15px,
-            inset $color-shade 0 -3px 10px 2px;
+        box-shadow: $color-shade 0 5px 15px; 
     }
 
     span:nth-of-type(2) {
@@ -467,13 +453,15 @@ img {
 
 // LANDING
 #landing {
+    min-height: 100vh;
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
     background: #000;
     text-align: center;
     flex-direction: column;
-    gap: 40px;
+    padding: 0 10px 50px;
+    gap: 0;
+    justify-content: space-between;
 
     &::after {
         content: '';
@@ -490,15 +478,20 @@ img {
     }
 
     #logo {
-        width: 200px;
+        width: 150px;
         margin: 0 auto;
     }
 
-    h1 { font-size: 60px; }
+    h1 { 
+        font-size: 3em;
+        padding: 0; 
+    }
 
-    .text-1 { font-size: 26px; }
+    .text-1 { font-size: 1.5em; }
 
-    .text-2 { margin-top: 20px; }
+    .text-2 { font-size: 1.2em; }
+
+    .text-3 { margin-top: 20px; }
 
     h1, p { text-shadow: #000 0 0 5px; }
 }
@@ -507,7 +500,7 @@ img {
 // "¿QUÉ ES?"
 #que-es {
     .card {
-        a { color: $color-light; }
+        a { color: var(--section-color-1); }
     }
 }
 
@@ -516,7 +509,8 @@ img {
     .card-small { 
         background-color: #e36b53;
         border-color: #a2412d;
-        font-size: 1.5em;
+        font-size: 1.2em;
+        font-weight: bold;
         text-shadow: $color-shade 1px 2px;
 
         p { color: $color-light; }
@@ -631,22 +625,8 @@ img {
 
 // "¿POR QUÉ DEBERÍAS APUNTARTE?"
 #apuntarte {
-    article {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        p {
-            flex: 1;
-            font-weight: bold;
-            color: var(--section-color-2);
-        }
-
-        i {
-            font-size: 2.3em;
-            flex: 0;
-            color: var(--section-color-2);
-        }
+    .card-small {
+        max-width: $breakpoint-md;
     }
 }
 
@@ -656,7 +636,6 @@ img {
 
     .row {
         max-width: none;
-        padding: 0 5%;
         flex-direction: row-reverse;
 
         @include respond-to(md) {
@@ -668,6 +647,7 @@ img {
         background-color: lighten($color-global-1, $amount: 15);
         border: none;
         padding: 20px;
+        margin: 0;
 
         h4 { background: none; }
 
@@ -677,12 +657,17 @@ img {
         }
     }
 
+    .image-container {
+        margin: 0 10px;
+        @include respond-to(md) { margin-top: 40px; }
+    }
+
     article {
         display: flex;
         flex-direction: column;
         height: auto;
         box-shadow: $color-shade 5px 5px 5px;
-        padding: 15px;
+        padding: 0;
         color: $color-light;
         background: none;
         box-shadow: none;
