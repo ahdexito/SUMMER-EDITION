@@ -10,18 +10,20 @@ $font-secondary: 'Oswald', sans-serif;
 // === COLOR PALETTE === //
 
 $color-light: #ffffff;
+$color-grey: #e0e0e0;
 $color-dark: #000000;
 $color-shade: #2a2a2a7d;
 
 $color-global-button: #e3ff38;
 $color-button-whatsapp: #40cf4b;
 
-$color-global-1: #c7ead9;
-$color-global-1-dark: #007a44;
-$color-global-2: #3ec1d3;
-$color-global-2-dark: #00446d;
-$color-global-3: #bae1f6;
-$color-global-3-dark: #1f3970;
+$color-global-1: #0c5635;
+$color-global-2: #02c268;
+$color-global-3: #30be83;
+$color-global-4: #00446d;
+$color-global-5: #3ec1d3;
+$color-global-6: #30adbe;
+$color-global-7: #c7fff7;
 
 
 // ======================================================== //
@@ -93,15 +95,15 @@ body {
 }
 
 section {
-    padding: 20px 5% 100px;
+    padding-bottom: 100px;
     gap: 20px;
-    background-color: var(--section-color);
-    box-shadow: inset $color-shade 0 0 50px;
+    background-color: $color-grey;
 
     @include flex-center;
 
     .row {
         @include flex-center;
+        max-width: $breakpoint-md;
         flex-direction: row;
         gap: 20px;
         width: 100%;
@@ -141,38 +143,43 @@ section {
 
     // Alternar colores de artículos
     &#que-es { 
-        --section-color: #{$color-global-1}; 
-        --section-dark-color: #{$color-global-1-dark};
+        --section-color-1: #{$color-global-1}; 
+        --section-color-2: #{$color-global-2};
+        --section-color-3: #{$color-global-3};
     }
     &#por-que {
-        --section-color: #{$color-global-2}; 
-        --section-dark-color: #{$color-global-2-dark};
+        --section-color-1: #{$color-global-4}; 
+        --section-color-2: #{$color-global-5};
+        --section-color-3: #{$color-global-6};
     }
     &#especial {
-        --section-color: #{$color-global-1}; 
-        --section-dark-color: #{$color-global-1-dark};
+        --section-color-1: #{$color-global-1}; 
+        --section-color-2: #{$color-global-2};
+        --section-color-3: #{$color-global-3};
     }
     &#como-funciona { 
-        --section-color: #{$color-global-2}; 
-        --section-dark-color: #{$color-global-2-dark};
+        --section-color-1: #{$color-global-4}; 
+        --section-color-2: #{$color-global-5};
+        --section-color-3: #{$color-global-6};
     }
     &#para-ti {
-        --section-color: #{$color-global-1};
-        --section-dark-color: #{$color-global-1-dark};
+        --section-color-1: #{$color-global-1};
+        --section-color-2: #{$color-global-2};
+        --section-color-3: #{$color-global-3};
     }
     &#apuntarte {
-        --section-color: #{$color-global-2}; 
-        --section-dark-color: #{$color-global-2-dark};
+        --section-color-1: #{$color-global-4}; 
+        --section-color-2: #{$color-global-5};
+        --section-color-3: #{$color-global-6};
     }
     &#dudas { 
-        --section-color: #{$color-global-3}; 
-        --section-dark-color: #{$color-global-3-dark};
+        --section-color-1: #{$color-global-1}; 
+        --section-color-2: #{$color-global-2};
     }
-    &#reviews { --section-color: #{$color-light}; }
 }
 
 .side-image {
-    border: 5px solid var(--section-dark-color);
+    border: 5px solid var(--section-color-2);
     box-shadow: $color-shade 5px 5px 10px;
 
     @include respond-to(lg) {
@@ -199,7 +206,7 @@ section {
 }
 
 hr {
-    border: 5px solid var(--section-dark-color);
+    border: 5px solid var(--section-color-2);
     border-radius: 10px;
     margin: 30px 0;
     width: 100%;
@@ -208,18 +215,17 @@ hr {
 
 article {
     width: 100%;
-    background-color: $color-light;
     color: $color-dark;
     border-radius: 10px;
     padding: 15px;
     padding-left: 25px;
     position: relative;
-    box-shadow: 
-        inset var(--section-dark-color) 10px 0 0,
-        $color-shade 5px 5px 5px;
+    text-align: center;
+
+    p { font-size: 1.2em; }
 
     hr {
-        border: 3px solid var(--section-dark-color);
+        border: 3px solid var(--section-color-2);
         border-radius: 10px;
         margin: 20px 0;
         box-shadow: none;
@@ -248,7 +254,7 @@ article {
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
-                color: var(--section-dark-color);
+                color: var(--section-color-2);
                 font-weight: bold;
                 font-size: 30px;
                 font-family: 'Courier New', Courier, monospace;
@@ -258,34 +264,62 @@ article {
 }
 
 .card {
-    background-color: var(--section-dark-color);
-    padding: 20px;
-    border: 3px solid $color-light;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    background-color: var(--section-color-3);
+    border: 5px solid var(--section-color-1);
     border-radius: 10px;
     box-shadow: $color-shade 5px 5px 5px;
 
     @include flex-center;
 
     h4 {
+        width: 100%;
+        padding: 10px;
         font-size: 1.5em;
         text-align: center;
-        text-shadow: $color-shade 3px 3px;;
-    }
-
-    hr {
-        border: 2px solid $color-light;
-        margin: 0;
+        background-color: var(--section-color-1);
+        color: $color-light;
     }
 
     p {
         font-size: 1.2em;
-        margin: 20px 0 30px;
+        margin: 20px 20px 0;
+        color: $color-light;
+        text-shadow: var(--section-color-1) 1px 2px;
+        text-align: center;
+    }
+
+    .button { margin-top: 30px; }
+
+}
+
+.card-small {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.2em;
+    border: 3px solid var(--section-color-1);
+    border-radius: 10px;
+    background-color: var(--section-color-3);
+    box-shadow: $color-shade 5px 5px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    color: $color-light;
+    text-shadow: var(--section-color-1) 1px 2px;
+
+    i {
+        font-size: 3em;
+        margin-right: 30px;
+        color: $color-light;
+        text-shadow: var(--section-color-1) 2px 3px;
     }
 }
 
 .article-card {
     width: 100%;
-    background-color: var(--section-dark-color);
+    background-color: var(--section-color-2);
     border-radius: 10px;
     box-shadow: $color-shade 5px 5px 5px;
 
@@ -313,20 +347,27 @@ article {
 }
 
 h1, h2, h3 {
-    background-color: var(--section-dark-color);
     font-family: $font-secondary;
-    color: $color-light ;
+    color: var(--section-color-2);
     width: 100%;
     padding: 15px;
-    font-size: 32px;
     text-align: center;
 }
 
-h2 {
-    border: 10px double $color-light;
-    box-shadow: $color-shade 5px 5px 5px;
-    text-shadow: $color-shade 3px 3px;
+h2 { 
+    font-size: 3em; 
+    background-color: var(--section-color-1);
+    color: $color-light;
+    margin-bottom: 30px;
+    border-bottom: 10px solid var(--section-color-2);
 }
+
+h3 { 
+    font-size: 2em; 
+    color: var(--section-color-1);
+}
+
+h4 { font-family: $font-secondary; }
 
 img {
     -webkit-user-select: none;
@@ -337,7 +378,7 @@ img {
 }
 
 .icon {
-    color: var(--section-dark-color);
+    color: var(--section-color-2);
     margin-right: 10px;
     width: 10px;
     font-size: 1.5em;
@@ -366,6 +407,11 @@ img {
         box-shadow: 
             $color-shade 5px 10px 15px,
             inset $color-shade 0 -3px 10px 2px;
+    }
+
+    span:nth-of-type(2) {
+        font-size: 0.6em;
+        font-weight: normal;
     }
 }
 
@@ -429,212 +475,108 @@ img {
         margin: 0 auto;
     }
 
-    h1 {
-        font-size: 46px;
-    }
+    h1 { font-size: 60px; }
 
-    .text-1 {
-        font-size: 26px;
-        //margin-bottom: 40px;
-    }
+    .text-1 { font-size: 26px; }
 
-    .text-2 {
-        margin-top: 20px;
-    }
+    .text-2 { margin-top: 20px; }
 
-    h1, p {
-        text-shadow: #000 0 0 5px;
-    }
+    h1, p { text-shadow: #000 0 0 5px; }
 }
 
-/*
+
 // "¿QUÉ ES?"
 #que-es {
     .card {
-        hr { margin-bottom: 20px; }
-        
-        ul {
-            list-style-type: none;
-
-            li { 
-                margin-bottom: 15px; 
-                
-                i { color: $color-light; }
-
-                &:last-child { margin-bottom: 30px; }
-            }
-        } 
-    }   
-
-    article {
-        a {
-            color: var(--section-dark-color);
-        }
-    }
-
-    .row {
-        flex-direction: row-reverse;
-
-        @include respond-to(md) {
-            flex-direction: column;
-        }
-    }
-}
-    */
-
-#que-es {
-    background-color: #f0f0f0;
-    box-shadow: none;
-
-    .row {
-        max-width: $breakpoint-lg;
-    }
-
-    h2 {
-        border: none;
-        max-width: $breakpoint-lg;
-        background: none;
-        box-shadow: none;
-        color: var(--section-dark-color);
-        text-shadow: none;
-        font-size: 3em;
-    }
-
-    h3 {
-        background: none;
-        color: var(--section-dark-color);
-    }
-
-    .image-container {
-        display: none;
-    }
-
-    article {
-        box-shadow: none;
-        background: none;
-        text-align: center;
-    }
-
-    article:nth-of-type(2) {
-        margin-top: 30px;
-        background-color: #dddddd;
-
-        p:nth-of-type(2) {
-            margin-top: 20px;
-            font-weight: bold;
-            color: var(--section-dark-color);
-        }
-
-        a {
-            color: #000;
-        }
-    }
-
-    a {
-        border: none;
-    }
-
-    .card {
-        width: 100%;
-        border: none;
-        background-color: var(--section-dark-color);
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 10px 20px;
-
-        i {
-            font-size: 3em;
-            margin-right: 30px;
-            color: $color-light;
+        a { 
+            color: $color-global-1; 
+            text-shadow: none;
         }
     }
 }
 
 // "¿POR QUÉ HEMOS CREADO LA SUMMER EDITION?"
 #por-que {
-    article {
-        h4 {
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: var(--section-dark-color);
+    .card-small { 
+        background-color: #e36b53;
+        border-color: #a2412d;
+        font-weight: bold;
+        font-size: 1.5em;
+        color: $color-light;
+
+        i { 
+            font-size: 1.2em; 
+            margin-right: 10px;
             color: $color-light;
-            font-size: 1.3em;
-            text-transform: uppercase;
-            border-radius: 10px;
-        }
-
-        ul li:not(:last-child) { margin-bottom: 15px; }
-
-        p { 
-            font-weight: bold; 
-            font-size: 1.1em;
-            color: var(--section-dark-color);
-            text-align: center;
         }
     }
-
-    a { margin-top: 30px; }
-
-    .card { p { margin-bottom: 0; } }
 }
 
 // "¿QUÉ LA HACE TAN ESPECIAL?"
 #especial {
-    ul li:not(:last-child) { margin-bottom: 15px; }
+    .card-small {
+        i {
+            font-size: 1.5em;
+        }
 
-    .row {
-        flex-direction: row-reverse;
+        p {
+            font-size: 1em;
+        }
+    }
 
-        @include respond-to(md) {
-            flex-direction: column;
+    .card {        
+        h4 {
+            text-shadow: none;
         }
     }
 }
 
 // "¿CÓMO FUNCIONA?"
 #como-funciona {
-    flex-direction: column;
+    .article-card {
+        background-color: var(--section-color-1);
 
-    .row:nth-of-type(2) {
-        flex-direction: row-reverse;
+        h3 { color: $color-light; }
+    
+        article {
+            background-color: $color-light;
+            text-align: start;
 
-        @include respond-to(md) {
-            flex-direction: column;
-        }
-    }
+            & > ul li {
+                margin-bottom: 20px;
 
-    article {
-        & > ul li {
-            margin-bottom: 20px;
+                &::marker {
+                    color: var(--section-color-1);
+                    font-size: 1.2em;
+                }
 
-            &::marker {
-                color: var(--section-dark-color);
-                font-size: 1.2em;
+                ul {
+                    list-style-type: circle;
+                    margin-left: 25px;
+                    margin-top: 5px;
+
+                    a { color: var(--section-color-1) } 
+
+                    li { margin: 0; }
+                }
             }
 
-            ul {
-                list-style-type: circle;
-                margin-left: 25px;
-                margin-top: 5px;
+            & > ul li:last-child { margin: 0; }
+
+            b { 
+                color: var(--section-color-1); 
+                font-size: 1.1em;
             }
+
+            p { margin-top: 20px; }
         }
-
-        & > ul li:last-child { margin: 0; }
-
-        b { 
-            color: var(--section-dark-color); 
-            font-size: 1.1em;
-        }
-
-        p { margin-top: 20px; }
     }
 
     .col > article {
         font-size: 1.3em;
         text-align: center;
 
-        h4 { color: var(--section-dark-color); }
+        h4 { color: var(--section-color-2); }
     }
 }
 
@@ -658,13 +600,13 @@ img {
         p {
             flex: 1;
             font-weight: bold;
-            color: var(--section-dark-color);
+            color: var(--section-color-2);
         }
 
         i {
             font-size: 2.3em;
             flex: 0;
-            color: var(--section-dark-color);
+            color: var(--section-color-2);
         }
     }
 }
@@ -679,13 +621,13 @@ img {
         p {
             flex: 1;
             font-weight: bold;
-            color: var(--section-dark-color);
+            color: var(--section-color-2);
         }
 
         i {
             font-size: 2.3em;
             flex: 0;
-            color: var(--section-dark-color);
+            color: var(--section-color-2);
         }
     }
 }
@@ -703,7 +645,16 @@ img {
     }
 
     .card {
-        background-color: lighten($color-global-3-dark, $amount: 15);
+        background-color: lighten($color-global-1, $amount: 15);
+        border: none;
+        padding: 20px;
+
+        h4 { background: none; }
+
+        p {
+            color: $color-light;
+            margin: 0 0 20px;
+        }
     }
 
     article {
@@ -718,10 +669,13 @@ img {
         margin-top: 50px;
 
         p {
-            color: var(--section-dark-color);
+            color: var(--section-color-1);
             font-weight: bold;
         }
         
+        h3 {
+            background-color: none;
+        }
 
         h4 {
             font-size: 24px;
@@ -734,6 +688,10 @@ img {
             text-align: center;
             margin-bottom: 20px;
             flex: 1;
+        }
+
+        a:first-of-type {
+            margin-bottom: 20px;
         }
     }
 
@@ -806,10 +764,10 @@ img {
 // RESEÑAS
 #reviews {
     box-shadow: none;
-    background-color: #f0f0f0;
 
     h2 { 
-        color: #3c3c3c;
+        color: $color-light;
+        background-color: #3c3c3c;
         box-shadow: none;
         border: none;
         text-shadow: none;
@@ -924,11 +882,12 @@ img {
 // PATROCINADORES
 #patrocinadores {
     box-shadow: none;
+    background-color: $color-light;
 
     @include flex-center;
 
     h2 { 
-        color: $color-global-1-dark;
+        color: $color-global-1;
         box-shadow: none;
         border: none;
         text-shadow: none;
