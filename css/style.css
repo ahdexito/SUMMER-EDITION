@@ -276,7 +276,7 @@ article ol li::before {
 
 .article-card {
   width: 100%;
-  background-color: var(--section-color-2);
+  background-color: var(--section-color-1);
   border-radius: 20px;
   margin-bottom: 10px;
 }
@@ -285,20 +285,51 @@ article ol li::before {
   text-align: left;
   font-size: 26px;
   text-shadow: rgba(42, 42, 42, 0.4901960784) 3px 3px;
+  color: #ffffff;
 }
 .article-card h3 .icon {
   color: #ffffff;
   font-size: 1.2em;
 }
 .article-card article {
-  box-shadow: none;
   width: calc(100% - 10px);
   margin-left: 10px;
   border: 5px solid var(--section-color-1);
   border-radius: 20px;
+  box-shadow: none;
+  background-color: #ffffff;
+  text-align: start;
 }
-.article-card article ul {
+.article-card article > ul {
   list-style: inside disc;
+}
+.article-card article > ul li {
+  margin-bottom: 20px;
+}
+.article-card article > ul li::marker {
+  color: var(--section-color-1);
+  font-size: 1.2em;
+}
+.article-card article > ul li ul {
+  list-style-type: circle;
+  margin-left: 25px;
+  margin-top: 5px;
+}
+.article-card article > ul li ul a {
+  color: var(--section-color-1);
+}
+.article-card article > ul li ul li {
+  margin: 0;
+}
+.article-card article > ul li:last-child {
+  margin: 0;
+}
+.article-card article b {
+  color: var(--section-color-1);
+  font-size: 1.1em;
+}
+.article-card article p {
+  margin-top: 20px;
 }
 
 h1, h2, h3 {
@@ -484,44 +515,6 @@ img {
   text-shadow: none;
 }
 
-#como-funciona .article-card {
-  background-color: var(--section-color-1);
-}
-#como-funciona .article-card h3 {
-  color: #ffffff;
-}
-#como-funciona .article-card article {
-  background-color: #ffffff;
-  text-align: start;
-}
-#como-funciona .article-card article > ul li {
-  margin-bottom: 20px;
-}
-#como-funciona .article-card article > ul li::marker {
-  color: var(--section-color-1);
-  font-size: 1.2em;
-}
-#como-funciona .article-card article > ul li ul {
-  list-style-type: circle;
-  margin-left: 25px;
-  margin-top: 5px;
-}
-#como-funciona .article-card article > ul li ul a {
-  color: var(--section-color-1);
-}
-#como-funciona .article-card article > ul li ul li {
-  margin: 0;
-}
-#como-funciona .article-card article > ul li:last-child {
-  margin: 0;
-}
-#como-funciona .article-card article b {
-  color: var(--section-color-1);
-  font-size: 1.1em;
-}
-#como-funciona .article-card article p {
-  margin-top: 20px;
-}
 #como-funciona .col > article {
   font-size: 1.3em;
   text-align: center;

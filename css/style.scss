@@ -124,21 +124,15 @@ section {
         width: 100%;
         gap: 10px;
 
-        @include respond-to(md) {
-            max-width: $breakpoint-sm;
-        }
+        @include respond-to(md) { max-width: $breakpoint-sm; }
 
         &.image-container {
             width: 80%;
             min-height: 200px;
 
-            @include respond-to(md) {
-                width: 100%;
-            }
+            @include respond-to(md) { width: 100%; }
 
-            @include respond-to(lg) {
-                height: auto;
-            }
+            @include respond-to(lg) { height: auto; }
         }
     }
 
@@ -232,9 +226,7 @@ article {
         box-shadow: none;
     }
 
-    ul {
-        list-style-type: none;
-    }
+    ul { list-style-type: none; }
 
     ol {
         list-style: none;
@@ -324,7 +316,7 @@ article {
 
 .article-card {
     width: 100%;
-    background-color: var(--section-color-2);
+    background-color: var(--section-color-1);
     border-radius: 20px;
     margin-bottom: 10px;
 
@@ -333,6 +325,7 @@ article {
         text-align: left;
         font-size: 26px;
         text-shadow: $color-shade 3px 3px;
+        color: $color-light;
 
         .icon { 
             color: $color-light;
@@ -341,15 +334,45 @@ article {
     }
 
     article {
-        box-shadow: none;
         width: calc(100% - 10px);
         margin-left: 10px;
         border: 5px solid var(--section-color-1);
         border-radius: 20px;
+        box-shadow: none;
+        background-color: $color-light;
+        text-align: start;
 
-        ul {
+        & > ul {
             list-style: inside disc;
+
+            li {
+                margin-bottom: 20px;
+
+                &::marker {
+                    color: var(--section-color-1);
+                    font-size: 1.2em;
+                }
+
+                ul {
+                    list-style-type: circle;
+                    margin-left: 25px;
+                    margin-top: 5px;
+
+                    a { color: var(--section-color-1); } 
+
+                    li { margin: 0; }
+                }
+            }
+
+            li:last-child { margin: 0; }
         }
+
+        b { 
+            color: var(--section-color-1); 
+            font-size: 1.1em;
+        }
+
+        p { margin-top: 20px; }
     }
 }
 
@@ -530,63 +553,18 @@ img {
 // "¿QUÉ LA HACE TAN ESPECIAL?"
 #especial {
     .card-small {
-        i {
-            font-size: 1.5em;
-        }
+        i { font-size: 1.5em; }
 
-        p {
-            font-size: 1em;
-        }
+        p { font-size: 1em; }
     }
 
     .card {        
-        h4 {
-            text-shadow: none;
-        }
+        h4 { text-shadow: none; }
     }
 }
 
 // "¿CÓMO FUNCIONA?"
 #como-funciona {
-    .article-card {
-        background-color: var(--section-color-1);
-
-        h3 { color: $color-light; }
-    
-        article {
-            background-color: $color-light;
-            text-align: start;
-
-            & > ul li {
-                margin-bottom: 20px;
-
-                &::marker {
-                    color: var(--section-color-1);
-                    font-size: 1.2em;
-                }
-
-                ul {
-                    list-style-type: circle;
-                    margin-left: 25px;
-                    margin-top: 5px;
-
-                    a { color: var(--section-color-1) } 
-
-                    li { margin: 0; }
-                }
-            }
-
-            & > ul li:last-child { margin: 0; }
-
-            b { 
-                color: var(--section-color-1); 
-                font-size: 1.1em;
-            }
-
-            p { margin-top: 20px; }
-        }
-    }
-
     .col > article {
         font-size: 1.3em;
         text-align: center;
@@ -614,9 +592,7 @@ img {
         max-width: none;
         flex-direction: row-reverse;
 
-        @include respond-to(md) {
-            flex-direction: column;
-        }
+        @include respond-to(md) { flex-direction: column; }
     }
 
     .card {
@@ -654,9 +630,7 @@ img {
             font-weight: bold;
         }
         
-        h3 {
-            background-color: none;
-        }
+        h3 { background-color: none; }
 
         h4 {
             font-size: 24px;
@@ -671,9 +645,7 @@ img {
             flex: 1;
         }
 
-        a:first-of-type {
-            margin-bottom: 20px;
-        }
+        a:first-of-type { margin-bottom: 20px; }
     }
 
     .whatsapp-button {
@@ -687,9 +659,7 @@ img {
         margin-top: auto;
         border: 3px solid $color-light;
 
-        i {
-            font-size: 1.7em;
-        }
+        i { font-size: 1.7em; }
 
         span {
             width: max-content;
@@ -717,9 +687,7 @@ img {
         }
 
         .form-row:last-of-type {
-            a {
-                background: none;
-            }
+            a { background: none; }
 
             .checkbox-row {
                 margin-left: 5px;
@@ -736,9 +704,7 @@ img {
             }
         }
 
-        button {
-            font-family: $font-primary;
-        }
+        button { font-family: $font-primary; }
     }
 }
 
@@ -762,9 +728,7 @@ img {
         box-shadow: $color-shade 0 0 10px;
         padding: 20px;
 
-        @include respond-to(md) {
-            width: 100%;
-        }
+        @include respond-to(md) { width: 100%; }
 
         .reviews-logo {
             width: 250px;
@@ -778,9 +742,7 @@ img {
             transition: transform 0.5s ease;
             cursor: grab;
 
-            &:active { 
-                cursor: grabbing; 
-            }
+            &:active { cursor: grabbing; }
         }
 
         .review {
@@ -802,9 +764,7 @@ img {
 
             transition: all 0.2s ease;
 
-            &:hover {
-                transform: scale(1.03);
-            }
+            &:hover { transform: scale(1.03); }
             
             .review-header {
                 display: flex;
@@ -830,9 +790,7 @@ img {
                 }
             }
 
-            p { 
-                line-height: 1.6; 
-            }
+            p { line-height: 1.6; }
         }
 
         .slider-dots {
@@ -885,9 +843,7 @@ img {
             max-width: 150px;
             transition: all 0.2s ease;
 
-            &:hover {
-                transform: scale(1.1);
-            }
+            &:hover { transform: scale(1.1); }
         }
     }
 }
@@ -897,9 +853,7 @@ img {
 // === DEBUG (IGNORE) ===
 
 // BORDERBOX
-* {
-    border: 0px solid red;
-}   
+* { border: 0px solid red; }   
 
 // RESPONSIVE 
 body::after {
