@@ -311,7 +311,6 @@ article {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
     color: var(--section-color-1);
 
     i {
@@ -319,6 +318,8 @@ article {
         margin-right: 30px;
         color: var(--section-color-1);
     }
+    
+    p { flex: 1; }
 }
 
 .article-card {
@@ -512,6 +513,7 @@ img {
         font-size: 1.2em;
         font-weight: bold;
         text-shadow: $color-shade 1px 2px;
+        padding: 10px;
 
         p { color: $color-light; }
 
@@ -593,35 +595,7 @@ img {
 }
 
 // "ES PARA TI SI..."
-#para-ti {
-    flex-direction: column;
 
-    .row {
-        flex-direction: row-reverse;
-
-        @include respond-to(md) {
-            flex-direction: column;
-        }
-    }
-    
-    article {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-
-        p {
-            flex: 1;
-            font-weight: bold;
-            color: var(--section-color-2);
-        }
-
-        i {
-            font-size: 2.3em;
-            flex: 0;
-            color: var(--section-color-2);
-        }
-    }
-}
 
 // "¿POR QUÉ DEBERÍAS APUNTARTE?"
 #apuntarte {
@@ -709,7 +683,7 @@ img {
         background-color: $color-button-whatsapp;
         color: $color-light;
         margin-top: auto;
-        border-color: $color-light;
+        border: 3px solid $color-light;
 
         i {
             font-size: 1.7em;

@@ -263,13 +263,15 @@ article ol li::before {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
   color: var(--section-color-1);
 }
 .card-small i {
   font-size: 3em;
   margin-right: 30px;
   color: var(--section-color-1);
+}
+.card-small p {
+  flex: 1;
 }
 
 .article-card {
@@ -459,6 +461,7 @@ img {
   font-size: 1.2em;
   font-weight: bold;
   text-shadow: rgba(42, 42, 42, 0.4901960784) 1px 2px;
+  padding: 10px;
 }
 #por-que .card-small p {
   color: #ffffff;
@@ -523,33 +526,6 @@ img {
   text-align: center;
 }
 #como-funciona .col > article h4 {
-  color: var(--section-color-2);
-}
-
-#para-ti {
-  flex-direction: column;
-}
-#para-ti .row {
-  flex-direction: row-reverse;
-}
-@media (max-width: 900px) {
-  #para-ti .row {
-    flex-direction: column;
-  }
-}
-#para-ti article {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-#para-ti article p {
-  flex: 1;
-  font-weight: bold;
-  color: var(--section-color-2);
-}
-#para-ti article i {
-  font-size: 2.3em;
-  flex: 0;
   color: var(--section-color-2);
 }
 
@@ -631,7 +607,7 @@ img {
   background-color: #40cf4b;
   color: #ffffff;
   margin-top: auto;
-  border-color: #ffffff;
+  border: 3px solid #ffffff;
 }
 #dudas .whatsapp-button i {
   font-size: 1.7em;
