@@ -359,7 +359,7 @@ img {
   text-decoration: none;
   text-align: center;
   font-weight: bold;
-  line-height: 1.1em;
+  line-height: 1.2em;
   cursor: pointer;
   box-shadow: rgba(42, 42, 42, 0.4901960784) 0 0 10px;
   margin: auto;
@@ -531,7 +531,8 @@ img {
 }
 
 #apuntarte .card-small {
-  max-width: 900px;
+  max-width: 600px;
+  margin: auto;
 }
 
 #dudas {

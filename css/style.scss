@@ -404,7 +404,7 @@ img {
     text-decoration: none;
     text-align: center;
     font-weight: bold;
-    line-height: 1.1em;
+    line-height: 1.2em;
     cursor: pointer;
     box-shadow: $color-shade 0 0 10px;
     margin: auto;
@@ -601,7 +601,8 @@ img {
 // "¿POR QUÉ DEBERÍAS APUNTARTE?"
 #apuntarte {
     .card-small {
-        max-width: $breakpoint-md;
+        max-width: $breakpoint-sm;
+        margin: auto;
     }
 }
 
