@@ -354,7 +354,7 @@ img {
   background-color: #e3ff38;
   color: #000000;
   border-radius: 10px;
-  padding: 15px 50px;
+  padding: 15px;
   font-size: 20px;
   text-decoration: none;
   text-align: center;
@@ -415,7 +415,7 @@ img {
   text-align: center;
   flex-direction: column;
   padding: 0 10px 50px;
-  gap: 0;
+  gap: 30px;
   justify-content: space-between;
 }
 #landing::after {
