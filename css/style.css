@@ -359,6 +359,7 @@ img {
   text-decoration: none;
   text-align: center;
   font-weight: bold;
+  line-height: 1.1em;
   cursor: pointer;
   box-shadow: rgba(42, 42, 42, 0.4901960784) 0 0 10px;
   margin: auto;
@@ -370,7 +371,7 @@ img {
   box-shadow: rgba(42, 42, 42, 0.4901960784) 0 5px 15px;
 }
 .button span:nth-of-type(2) {
-  font-size: 0.6em;
+  font-size: 0.5em;
   font-weight: normal;
 }
 

@@ -404,6 +404,7 @@ img {
     text-decoration: none;
     text-align: center;
     font-weight: bold;
+    line-height: 1.1em;
     cursor: pointer;
     box-shadow: $color-shade 0 0 10px;
     margin: auto;
@@ -416,7 +417,7 @@ img {
     }
 
     span:nth-of-type(2) {
-        font-size: 0.6em;
+        font-size: 0.5em;
         font-weight: normal;
     }
 }
