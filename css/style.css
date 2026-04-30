@@ -486,6 +486,9 @@ img {
 #que-es .card a {
   color: var(--section-color-1);
 }
+#que-es .button {
+  margin-top: 20px;
+}
 
 #por-que .card-small {
   background-color: #e36b53;
